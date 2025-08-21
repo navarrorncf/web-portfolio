@@ -1,3 +1,15 @@
 <app-header />
 
-<main></main>
+<main>
+  <ul id="users">
+    @for (user of users; track user.id) {
+      <li>
+        <app-user
+          [user]="user"
+          [selected]="user.id === selectedUser?.id"
+          (userselected)="onSelectUser($event)"
+        />
+      </li>
+    }
+  </ul>
+</main>
