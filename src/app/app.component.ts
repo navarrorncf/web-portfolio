@@ -1,13 +1,21 @@
-import { Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
+import { Component } from '@angular/core';
+
+import { DUMMY_USERS } from './dummy-users';
+
+type User = {
+    id: string;
+    name: string;
+    avatar: string;
+}
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: []
 })
 export class AppComponent {
-  title = '101'
+  users: User[] = DUMMY_USERS;
+  selectedUser?: User;
 }
