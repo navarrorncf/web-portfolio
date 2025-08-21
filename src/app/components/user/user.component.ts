@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { CardComponent } from '../ui/card/card.component'
 
 export type UserProps = {
   avatar: string
@@ -9,7 +10,7 @@ export type UserProps = {
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })

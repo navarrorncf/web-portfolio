@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core'
+import { CardComponent } from "../../ui/card/card.component";
 
 type Task = {
   title: string
@@ -9,7 +10,7 @@ type Task = {
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
 })
