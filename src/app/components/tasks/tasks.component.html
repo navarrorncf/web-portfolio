@@ -1,3 +1,7 @@
+@if (isTaskDraftOpen) {
+  <app-new-task (closetaskdraft)="onCloseTaskDraft()" />
+}
+
 <section id="tasks">
   <header>
     <h2>{{ user.name }}'s Tasks</h2>

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core'
+import { NewTaskComponent } from './new-task/new-task.component'
 import { TaskComponent } from './task/task.component'
 
 type User = {
@@ -9,7 +10,7 @@ type User = {
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [TaskComponent],
+  imports: [NewTaskComponent, TaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
 })
