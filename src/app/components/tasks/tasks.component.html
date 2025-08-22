@@ -1,5 +1,5 @@
 @if (isTaskDraftOpen) {
-  <app-new-task (closetaskdraft)="onCloseTaskDraft()" />
+  <app-new-task (closetaskdraft)="onCloseTaskDraft()" [user]="user" />
 }
 
 <section id="tasks">
@@ -18,4 +18,3 @@
     }
   </ul>
 </section>
-
