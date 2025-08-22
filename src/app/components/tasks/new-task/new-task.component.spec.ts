@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { NewTaskComponent } from './new-task.component'
+import { FormsModule } from '@angular/forms'
 
 describe('NewTaskComponent', () => {
   let component: NewTaskComponent
@@ -8,7 +9,8 @@ describe('NewTaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NewTaskComponent],
+      declarations: [NewTaskComponent],
+      imports: [FormsModule],
     }).compileComponents()
 
     fixture = TestBed.createComponent(NewTaskComponent)

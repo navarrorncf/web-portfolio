@@ -1,28 +1,19 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
-import { HeaderComponent } from './components/header/header.component';
-import { UserComponent } from './components/user/user.component';
-import { DUMMY_USERS } from './dummy-users';
-import { TasksComponent } from "./components/tasks/tasks.component";
-
-type User = {
-    id: string;
-    name: string;
-    avatar: string;
-}
+import { DUMMY_USERS } from './dummy-users'
+import { User } from './components/user/user.model'
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    imports: [HeaderComponent, UserComponent, TasksComponent]
+  selector: 'app-root',
+  standalone: false,
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  users: User[] = DUMMY_USERS;
-  selectedUser?: User;
+  users: User[] = DUMMY_USERS
+  selectedUser?: User
 
   onSelectUser(id: string) {
-    this.selectedUser = this.users.find(u => u.id === id);
+    this.selectedUser = this.users.find((u) => u.id === id)
   }
 }

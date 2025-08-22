@@ -8,11 +8,15 @@ describe('TasksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TasksComponent],
+      declarations: [TasksComponent],
     }).compileComponents()
 
     fixture = TestBed.createComponent(TasksComponent)
-    fixture.componentRef.setInput('user', { id: 'u1', name: 'User 1', avatar: 'avatar1.png' })
+    fixture.componentRef.setInput('user', {
+      id: 'u1',
+      name: 'User 1',
+      avatar: 'avatar1.png',
+    })
     component = fixture.componentInstance
     fixture.detectChanges()
   })

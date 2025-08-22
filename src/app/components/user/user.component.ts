@@ -1,25 +1,18 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { CardComponent } from '../ui/card/card.component'
-
-export type UserProps = {
-  avatar: string
-  id: string
-  name: string
-}
+import { User } from './user.model'
 
 @Component({
   selector: 'app-user',
-  standalone: true,
-  imports: [CardComponent],
+  standalone: false,
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
 export class UserComponent {
   @Input({
     required: true,
-    transform: transformProps
+    transform: transformProps,
   })
-  user!: UserProps
+  user!: User
 
   @Input() selected = false
 
@@ -30,7 +23,7 @@ export class UserComponent {
   }
 }
 
-export function transformProps(user: UserProps): UserProps {
+export function transformProps(user: User): User {
   return {
     ...user,
     avatar: 'img/users/' + user.avatar,
