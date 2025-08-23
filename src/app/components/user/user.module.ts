@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 import { UserComponent } from './user.component'
-import { CardModule } from '../ui/card/card.module'
+import { UiModule } from '../ui/ui.module'
 
 @NgModule({
-  imports: [CardModule],
+  imports: [UiModule],
   declarations: [UserComponent],
   exports: [UserComponent],
 })
