@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, inject, Input } from '@angular/core'
 import { NewTaskComponent } from './new-task/new-task.component'
 import { TaskComponent } from './task/task.component'
 import { TasksService } from './tasks.service'
@@ -15,7 +15,7 @@ import { User } from '../user/user.model'
 export class TasksComponent {
   @Input({ required: true }) user!: User
 
-  constructor(private tasksService: TasksService) {}
+  private tasksService = inject(TasksService)
 
   isTaskDraftOpen = false
 

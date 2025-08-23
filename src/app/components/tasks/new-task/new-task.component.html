@@ -1,3 +1,5 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
 <div class="backdrop" (click)="onCloseTaskDraft()"></div>
 <dialog open>
   <h2>Add Task</h2>
@@ -9,7 +11,12 @@
 
     <p>
       <label for="summary">Summary</label>
-      <textarea id="summary" rows="5" name="summary" [(ngModel)]="summary"></textarea>
+      <textarea
+        id="summary"
+        rows="5"
+        name="summary"
+        [(ngModel)]="summary"
+      ></textarea>
     </p>
 
     <p>
