@@ -33,7 +33,8 @@ module.exports = tseslint.config(
       "@typescript-eslint/consistent-type-definitions": [
         "error",
         "type"
-      ]
+      ],
+      "@angular-eslint/prefer-standalone": "off"
     },
   },
   {
