@@ -9,7 +9,9 @@
       "!{projectRoot}/**/*.spec.[jt]s",
       "!{projectRoot}/karma.conf.js",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.cjs"
+      "!{projectRoot}/eslint.config.cjs",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
   "targetDefaults": {
@@ -29,7 +31,24 @@
         "{workspaceRoot}/eslint.config.cjs"
       ],
       "cache": true
+    },
+    "@angular-devkit/build-angular:application": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
     }
   },
-  "nxCloudId": "68aaf2c68a9f820b5d0c8ebb"
+  "nxCloudId": "68aaf2c68a9f820b5d0c8ebb",
+  "generators": {
+    "@nx/angular:application": {
+      "e2eTestRunner": "none",
+      "linter": "eslint",
+      "style": "css",
+      "unitTestRunner": "vitest"
+    }
+  }
 }
