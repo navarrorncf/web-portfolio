@@ -17,7 +17,7 @@ export type UserProps = {
 export class UserComponent {
   @Input({
     required: true,
-    transform: transformProps
+    transform: transformProps,
   })
   user!: UserProps
 
