@@ -1,0 +1,70 @@
+#investment-calculator-form {
+  margin: 0 auto;
+  max-width: 600px;
+  background: #064;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #0009;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  label {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 900;
+    padding-inline-start: 0.2rem;
+  }
+
+  input {
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin-block-start: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #fff9;
+    border-radius: 5px;
+    color: #fff;
+  }
+
+  input:focus {
+    outline: solid 1px #fff9;
+    outline-offset: -2px;
+    box-shadow: 1px 1px 3px #fff9 inset;
+  }
+}
+
+.form_element {
+  display: flex;
+  flex-direction: column;
+  width: minmax(50%, 100%);
+}
+
+.form_button {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  button {
+    width: 100%;
+    background: #0b8;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+}
+
+form button:focus {
+  box-shadow: 0px 0px 10px #fff9;
+  outline: solid 1px #fff9;
+  outline-offset: -1px;
+}
