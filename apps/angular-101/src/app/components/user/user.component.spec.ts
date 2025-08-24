@@ -12,7 +12,11 @@ describe('UserComponent', () => {
     }).compileComponents()
 
     fixture = TestBed.createComponent(UserComponent)
-    fixture.componentRef.setInput('user', { id: 'u1', name: 'User 1', avatar: 'avatar1.png' })
+    fixture.componentRef.setInput('user', {
+      id: 'u1',
+      name: 'User 1',
+      avatar: 'avatar1.png',
+    })
     component = fixture.componentInstance
     fixture.detectChanges()
   })
