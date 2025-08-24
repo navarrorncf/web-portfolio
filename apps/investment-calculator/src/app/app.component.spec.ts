@@ -8,6 +8,15 @@ describe('AppComponent', () => {
     }).compileComponents()
   })
 
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent)
+    fixture.detectChanges()
+    const compiled = fixture.nativeElement as HTMLElement
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Investment Calculator',
+    )
+  })
+
   it(`should have as title 'investment-calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
