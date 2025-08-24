@@ -1,0 +1,28 @@
+#forecast-container {
+  max-width: 600px;
+  margin: 5rem auto;
+}
+
+.no-forecast {
+  text-align: center;
+}
+
+table {
+  font-size: 1.4rem;
+  width: 100%;
+  border-spacing: 1rem;
+}
+
+td,
+th {
+  text-align: end;
+}
+
+thead th {
+  color: var(--color-text-highlight);
+}
+
+tbody td {
+  font-weight: 700;
+  color: var(--color-text);
+}

@@ -20,6 +20,6 @@ describe('AppComponent', () => {
   it(`should have as title 'investment-calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
-    expect(app.title).toEqual('investment-calculator')
+    expect(app.forecast).toEqual(null)
   })
 })

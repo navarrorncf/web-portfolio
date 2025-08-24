@@ -1,4 +1,7 @@
 <app-header />
-<app-investment-calculator-form />
+<app-investment-calculator-form
+  (calculatorformsubmit)="updateForecast($event)"
+/>
+<app-forecast [forecast]="forecast" />
 
 <router-outlet></router-outlet>

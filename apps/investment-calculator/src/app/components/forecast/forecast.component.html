@@ -1,0 +1,28 @@
+<div id="forecast-container">
+  @if (forecast) {
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Investment Value</th>
+          <th>Interest (Year)</th>
+          <th>Total Interest</th>
+          <th>Invested Capital</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (annualForecast of forecast; track annualForecast.id) {
+          <tr>
+            <td>{{ annualForecast.year }}</td>
+            <td>{{ annualForecast.valueEndOfYear | currency: 'USD' }}</td>
+            <td>{{ annualForecast.interest | currency: 'USD' }}</td>
+            <td>{{ annualForecast.totalInterest | currency: 'USD' }}</td>
+            <td>{{ annualForecast.totalAmountInvested | currency: 'USD' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <p class="no-forecast">Please enter some values and press "Calculate".</p>
+  }
+</div>

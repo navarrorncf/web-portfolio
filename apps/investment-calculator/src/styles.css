@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-text: #ddd;
+  --color-text-highlight: #0b8;
+  --color-light-shadow: #fff9;
+  --color-light: #fff;
+}
+
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 * {
