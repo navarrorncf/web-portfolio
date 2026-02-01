@@ -1,5 +1,6 @@
 {
   "defaultBase": "main",
+  "neverConnectToCloud": true,
   "namedInputs": {
     "sharedGlobals": [],
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -42,7 +43,6 @@
       "inputs": ["default", "^production"]
     }
   },
-  "nxCloudId": "68aaf2c68a9f820b5d0c8ebb",
   "generators": {
     "@nx/angular:application": {
       "e2eTestRunner": "none",
