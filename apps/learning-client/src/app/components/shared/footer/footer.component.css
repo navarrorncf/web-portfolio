@@ -1,0 +1,13 @@
+section.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--mat-sys-on-background);
+    color: var(--mat-sys-on-primary)
+}
+
+p {
+    text-align: center;
+}

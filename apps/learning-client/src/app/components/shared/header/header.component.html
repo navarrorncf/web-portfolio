@@ -1,0 +1,21 @@
+<header>
+  <section>
+    <img ngSrc="icon.png" width="48" height="48" alt="LYCEUM Logo" />
+    <h1>LYCEUM</h1>
+  </section>
+  <section>
+    <nav>
+      <a
+        matButton="tonal"
+        role="button"
+        tabindex="0"
+        (click)="navigationService.navigateToHome()"
+        >Home
+    </a>
+    <!-- (keyup)="navigationService.navigateToHome()" -->
+      <a matButton routerLink="/courses">Courses</a>
+      <a matButton routerLink="/about">Sign In</a>
+      <a matButton routerLink="/contact">Sign Up</a>
+    </nav>
+  </section>
+</header>
