@@ -1,21 +1,42 @@
 <header>
   <section>
-    <img ngSrc="icon.png" width="48" height="48" alt="LYCEUM Logo" />
+    <img i18n-alt ngSrc="icon.png" width="48" height="48" alt="LYCEUM Logo" />
     <h1>LYCEUM</h1>
   </section>
   <section>
     <nav>
       <a
+        i18n
         matButton="tonal"
         role="button"
         tabindex="0"
-        (click)="navigationService.navigateToHome()"
+        (click)="navigationService.navigateTo('HOME')"
         >Home
-    </a>
-    <!-- (keyup)="navigationService.navigateToHome()" -->
-      <a matButton routerLink="/courses">Courses</a>
-      <a matButton routerLink="/about">Sign In</a>
-      <a matButton routerLink="/contact">Sign Up</a>
+      </a>
+      <a
+        i18n
+        matButton
+        role="button"
+        tabindex="0"
+        (click)="navigationService.navigateTo('EXPLORE')"
+        >Explore</a
+      >
+      <a
+        i18n
+        matButton
+        role="button"
+        tabindex="0"
+        (click)="navigationService.navigateTo('SIGN_IN')"
+        >Sign In</a
+      >
+      <a
+        i18n
+        matButton
+        role="button"
+        tabindex="0"
+        (click)="navigationService.navigateTo('SIGN_UP')"
+        >Sign Up</a
+      >
     </nav>
   </section>
 </header>

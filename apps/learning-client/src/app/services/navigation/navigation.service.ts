@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core'
 import { SettingsService } from '../settings/settings.service'
+import { paths } from '@/constants/paths'
 
 @Injectable({
   providedIn: 'root',
@@ -7,22 +8,22 @@ import { SettingsService } from '../settings/settings.service'
 export class NavigationService {
   private settingsService = inject(SettingsService)
 
-  private pathPrefix = '/'
+  private routes = { ...paths }
 
   constructor() {
     const settings = this.settingsService.getSettings()
-    this.pathPrefix += settings.locale
+    const pathPrefix = `/${settings.locale}/`
+
+    ;(Object.keys(paths) as (keyof typeof paths)[]).forEach((key) => {
+      this.routes[key] = pathPrefix + paths[key]
+    })
   }
 
-  navigateToHome(): void {
-    window.location.href = `${this.pathPrefix}/`
+  navigateTo(route: keyof typeof this.routes): void {
+    window.location.href = this.routes[route]
   }
 
-  navigateToSignIn(): void {
-    window.location.replace(`${this.pathPrefix}/login`)
-  }
-
-  navigateToSignOn(): void {
-    window.location.replace(`${this.pathPrefix}/register`)
+  replaceRoute(route: keyof typeof this.routes): void {
+    window.location.replace(route)
   }
 }

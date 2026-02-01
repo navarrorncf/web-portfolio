@@ -5,6 +5,13 @@
   "prefix": "app",
   "sourceRoot": "apps/learning-client/src",
   "tags": [],
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "pt": "apps/learning-client/src/locale/messages.pt-BR.xlf",
+      "pt-PT": "apps/learning-client/src/locale/messages.pt-PT.xlf"
+    }
+  },
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
@@ -12,6 +19,7 @@
         "{options.outputPath}"
       ],
       "options": {
+        "localize": ["en-US", "pt", "pt-PT"],
         "outputPath": "dist/apps/learning-client",
         "index": "apps/learning-client/src/index.html",
         "browser": "apps/learning-client/src/main.ts",
@@ -69,7 +77,8 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "learning-client:build"
+        "buildTarget": "learning-client:build",
+        "outputPath": "apps/learning-client/src/locale"
       }
     },
     "lint": {
@@ -84,11 +93,23 @@
         "reportsDirectory": "../../coverage/apps/learning-client"
       }
     },
+    "local-build": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "mkdir -p dist/apps/learning-client/browser && echo '<h1>Works</h1>' > dist/apps/learning-client/browser/index.html"
+        ]
+      }
+    },
     "serve-static": {
       "continuous": true,
+      "dependsOn": ["local-build"],
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "learning-client:build",
+        "buildTarget": "learning-client:local-build",
+        "cors": true,
+        "port": 3000,
         "staticFilePath": "dist/apps/learning-client/browser",
         "spa": true
       }

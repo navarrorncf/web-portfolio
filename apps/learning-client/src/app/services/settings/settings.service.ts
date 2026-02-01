@@ -14,8 +14,6 @@ export class SettingsService {
   private theme: UiTheme = 'light'
   private locale = 'en-US'
 
-  // constructor() { }
-
   getSettings(): Settings {
     return {
       locale: this.locale,
