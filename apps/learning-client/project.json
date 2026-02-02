@@ -15,17 +15,12 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "localize": ["en-US", "pt", "pt-PT"],
         "outputPath": "dist/apps/learning-client",
         "index": "apps/learning-client/src/index.html",
         "browser": "apps/learning-client/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js", "@angular/localize/init"],
         "tsConfig": "apps/learning-client/tsconfig.app.json",
         "assets": [
           {
@@ -33,9 +28,7 @@
             "input": "apps/learning-client/public"
           }
         ],
-        "styles": [
-          "apps/learning-client/src/styles.scss"
-        ]
+        "styles": ["apps/learning-client/src/styles.scss"]
       },
       "configurations": {
         "production": {
@@ -51,6 +44,7 @@
               "maximumError": "8kb"
             }
           ],
+          "localize": ["en-US", "pt", "pt-PT"],
           "outputHashing": "all"
         },
         "development": {
@@ -86,9 +80,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": [
-        "{options.reportsDirectory}"
-      ],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/apps/learning-client"
       }
